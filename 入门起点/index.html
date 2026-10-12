@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第一步：显示一本书</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- 工具先加载，你的 JS 后加载。defer 会等 HTML 解析完成再执行脚本。 -->
+  <script src="./page-helper.js" defer></script>
+  <script src="./main.js" defer></script>
+</head>
+<body>
+  <main>
+    <p class="step">JS 入门 / 第一个小任务</p>
+    <h1>先让一本书出现</h1>
+    <p class="intro">页面已经准备好。今天，你只需要在 main.js 中写三行。</p>
+    <section class="book-card" aria-label="你的图书">
+      <span class="label">书名</span>
+      <h2 id="book-title">等待你填写</h2>
+      <span class="label">价格</span>
+      <p class="price"><span id="book-price">—</span><span class="unit">元</span></p>
+    </section>
+    <p id="notice" class="notice" role="status">先读“先看这里.md”，再打开 main.js。保存后刷新这个页面。</p>
+    <p class="footer-note">本次目标：变量、字符串、数字，以及调用一个现成的函数。</p>
+  </main>
+</body>
+</html>
+

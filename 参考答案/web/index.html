@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>图书管理 · JS 实战</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">JAVASCRIPT / 项目实战</p>
+        <h1>我的图书管理</h1>
+        <p class="subtitle">从一本书开始，把语法用起来。</p>
+      </div>
+      <label class="mode-label">保存方式
+        <select id="mode">
+          <option value="local">本地保存</option>
+          <option value="api">接口保存</option>
+        </select>
+      </label>
+    </header>
+
+    <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+    <p id="mode-note" class="mode-note"></p>
+
+    <section class="stats" aria-label="筛选结果统计">
+      <div><span>匹配图书</span><strong id="stat-count">0</strong><small>本</small></div>
+      <div><span>在售图书</span><strong id="stat-available">0</strong><small>本</small></div>
+      <div><span>价格合计</span><strong id="stat-price">¥ 0.00</strong><small>全部匹配记录</small></div>
+    </section>
+
+    <div class="workspace">
+      <section class="panel form-panel">
+        <div class="section-heading"><h2 id="form-title">新增图书</h2><span class="badge">01 / 记录</span></div>
+        <form id="book-form" novalidate>
+          <fieldset id="form-fields">
+            <label for="title">书名</label>
+            <input id="title" name="title" maxlength="100" placeholder="例如：JavaScript 实战" required>
+            <label for="author">作者</label>
+            <input id="author" name="author" maxlength="100" placeholder="输入作者" required>
+            <label for="price">价格 <span class="hint">元，最多两位小数</span></label>
+            <input id="price" name="price" type="text" inputmode="decimal" placeholder="0.00" required>
+            <label class="checkbox-label"><input id="available" name="available" type="checkbox" checked> 在售</label>
+            <div class="form-actions">
+              <button id="save" class="primary" type="submit">新增图书</button>
+              <button id="cancel-edit" type="button" hidden>取消编辑</button>
+            </div>
+          </fieldset>
+        </form>
+        <div class="learning-note">
+          <strong>先完成一个小功能</strong>
+          <p>新增一本书，再搜索、编辑、删除它。每次操作都对应一段你能解释的 JS。</p>
+        </div>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="section-heading"><h2>图书列表</h2><span class="badge">02 / 管理</span></div>
+        <fieldset id="query-fields" class="toolbar">
+          <label class="search-label" for="keyword">搜索
+            <input id="keyword" type="search" placeholder="书名或作者">
+          </label>
+          <label for="status">状态
+            <select id="status">
+              <option value="all">全部状态</option>
+              <option value="true">在售</option>
+              <option value="false">停售</option>
+            </select>
+          </label>
+          <label for="sort">排序
+            <select id="sort">
+              <option value="id-asc">编号升序</option>
+              <option value="price-asc">价格升序</option>
+              <option value="price-desc">价格降序</option>
+              <option value="title-asc">书名升序</option>
+            </select>
+          </label>
+          <button id="reload" type="button">刷新列表</button>
+        </fieldset>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>编号</th><th>书名 / 作者</th><th>价格</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody id="book-list"></tbody>
+          </table>
+        </div>
+        <p id="list-state" class="empty-state" role="status">加载中…</p>
+        <div class="pagination">
+          <label for="page-size">每页
+            <select id="page-size"><option value="5">5 本</option><option value="10">10 本</option><option value="20">20 本</option></select>
+          </label>
+          <div class="page-actions">
+            <button id="prev" type="button" disabled>上一页</button>
+            <span id="page-info">第 1 / 1 页</span>
+            <button id="next" type="button" disabled>下一页</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>原生 JS · 无框架 · 本机练习</span>
+      <button id="reset" class="text-button" type="button">重置当前数据</button>
+    </footer>
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+/* 这份样式已经写好。现在先只改 main.js。 */
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: #f2f6f5; color: #203c38;
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+main { max-width: 620px; margin: 70px auto; padding: 0 24px; }
+.step { color: #258579; font-size: 13px; letter-spacing: 1px; }
+h1 { font-size: 32px; margin: 18px 0; }
+.intro { color: #6e827e; line-height: 1.8; font-size: 14px; }
+.book-card {
+  margin-top: 30px; border: 1px solid #dfebe6; border-radius: 16px;
+  background: white; padding: 30px;
+}
+.label { color: #82958f; font-size: 12px; }
+h2 { margin: 12px 0 28px; font-size: 24px; overflow-wrap: anywhere; }
+.price { margin: 12px 0 0; font-size: 34px; font-weight: 600; }
+.unit { font-size: 14px; margin-left: 10px; color: #85958f; font-weight: normal; }
+.notice { background: #e5f0eb; padding: 16px; border-radius: 10px; font-size: 13px; line-height: 1.8; }
+.notice[data-error="true"] { background: #ffeded; color: #9a3929; }
+.footer-note { color: #83968f; font-size: 12px; line-height: 1.8; }
+@media (max-width: 600px) {
+  main { margin-top: 35px; padding: 0 20px; }
+  h1 { font-size: 27px; }
+  .book-card { padding: 24px; }
+}
+

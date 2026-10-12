@@ -1,0 +1,14 @@
+{
+  "name": "js-books-learning-project",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "原生 JavaScript 图书管理学习项目，无第三方依赖",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node 参考答案/server.mjs",
+    "test": "node --test 参考答案/tests/domain.test.mjs 参考答案/tests/storage.test.mjs 参考答案/tests/server.test.mjs",
+    "test:browser": "node 参考答案/tests/browser-smoke.mjs"
+  }
+}
+

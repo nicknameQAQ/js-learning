@@ -1,0 +1,106 @@
+:root {
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #1c2e36;
+  background: #f3f6f6;
+  font-synthesis: none;
+  --accent: #15746c;
+  --line: #e3eaea;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, select { font: inherit; }
+button, select { cursor: pointer; }
+button {
+  border: 1px solid #d9e2e2; border-radius: 7px; padding: 9px 13px;
+  background: white; color: #263c43; white-space: nowrap;
+}
+button:hover { background: #f0f7f5; border-color: #9cbbb6; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button[hidden], [hidden] { display: none !important; }
+input, select {
+  width: 100%; min-width: 0; border: 1px solid #d8e2e2;
+  border-radius: 7px; background: white; padding: 11px 12px; color: #263c43;
+}
+input:focus, select:focus, button:focus-visible {
+  outline: 2px solid #159787; outline-offset: 2px;
+}
+input::placeholder { color: #8c9c9f; }
+input[type="checkbox"] { width: 17px; height: 17px; accent-color: var(--accent); }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.app { max-width: 1280px; margin: auto; padding: 46px 36px 24px; }
+.header { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 2px; margin: 0 0 14px; }
+h1 { margin: 0; font-size: 32px; letter-spacing: -.8px; }
+.subtitle { color: #718287; margin: 12px 0 0; font-size: 14px; }
+.mode-label { width: 160px; font-size: 12px; color: #657b80; }
+.mode-label select { margin-top: 7px; font-size: 14px; }
+.mode-note { font-size: 12px; color: #718287; margin: 20px 0; }
+.message { padding: 13px 16px; margin-top: 18px; border-radius: 7px; font-size: 14px; background: #e0f3ec; color: #17604d; }
+.message[data-kind="error"] { background: #fff0ed; color: #a33623; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 25px; }
+.stats > div { background: white; border: 1px solid var(--line); border-radius: 10px; padding: 20px 23px; }
+.stats span { display: block; color: #73858a; font-size: 13px; margin-bottom: 12px; }
+.stats strong { font-size: 27px; font-weight: 650; }
+.stats small { color: #7d8d92; margin-left: 8px; font-size: 12px; }
+.workspace { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 22px; align-items: start; }
+.panel { min-width: 0; background: white; border: 1px solid var(--line); border-radius: 10px; padding: 23px; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 23px; }
+h2 { font-size: 17px; margin: 0; }
+.badge { font-size: 10px; color: #849398; letter-spacing: 1px; white-space: nowrap; }
+.form-panel label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.form-panel input:not([type="checkbox"]) { margin-bottom: 19px; font-size: 14px; }
+.hint { color: #859398; font-size: 11px; font-weight: normal; }
+.form-panel .checkbox-label { display: flex; align-items: center; gap: 9px; margin: 0 0 24px; }
+.form-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.primary { background: var(--accent); color: white; border-color: var(--accent); flex: 1; }
+.primary:hover { background: #105e57; border-color: #105e57; }
+.learning-note { border-top: 1px solid var(--line); margin-top: 27px; padding-top: 20px; font-size: 12px; color: #647c80; }
+.learning-note strong { color: #4c666c; }
+.learning-note p { line-height: 1.8; margin-bottom: 0; }
+.toolbar { display: flex; gap: 12px; align-items: end; margin-bottom: 20px; flex-wrap: wrap; }
+.toolbar label { color: #718287; font-size: 11px; flex: 0 0 112px; }
+.toolbar .search-label { flex: 1 1 170px; }
+.toolbar input, .toolbar select { font-size: 13px; margin-top: 6px; }
+.toolbar button { min-height: 40px; font-size: 12px; }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13px; }
+th { color: #7c8d92; font-size: 11px; font-weight: 500; border-bottom: 1px solid var(--line); padding: 13px 9px; white-space: nowrap; }
+td { padding: 18px 9px; border-bottom: 1px solid #edf1f1; vertical-align: middle; }
+td:first-child { color: #859398; width: 55px; }
+.book-title { display: block; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; min-width: 100px; }
+.book-author { display: block; font-size: 11px; color: #829398; margin-top: 5px; overflow-wrap: anywhere; }
+.price-cell { white-space: nowrap; }
+.status { display: inline-block; padding: 4px 8px; border-radius: 5px; font-size: 11px; background: #e8f5f0; color: #33775e; white-space: nowrap; }
+.status.off { background: #f1f2f2; color: #839095; }
+.row-actions { display: flex; gap: 6px; }
+.row-actions button { padding: 5px 9px; font-size: 12px; }
+.row-actions .delete { color: #ae5545; }
+.empty-state { color: #7f9297; text-align: center; font-size: 13px; padding: 28px 12px; margin: 0; }
+.pagination { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 20px; font-size: 12px; color: #7a8c91; flex-wrap: wrap; }
+.pagination label { display: flex; gap: 8px; align-items: center; white-space: nowrap; }
+.pagination select { width: 74px; padding: 7px; font-size: 12px; }
+.page-actions { display: flex; align-items: center; gap: 13px; }
+.page-actions button { font-size: 12px; padding: 7px 10px; }
+footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: #89989c; font-size: 11px; margin-top: 25px; }
+.text-button { color: #7f9297; font-size: 11px; border: 0; background: transparent; padding-right: 0; }
+@media (max-width: 950px) {
+  .app { padding: 30px 20px; }
+  .workspace { grid-template-columns: 245px minmax(0, 1fr); gap: 16px; }
+  .panel { padding: 18px; }
+  .stats { gap: 12px; }
+  .stats small { display: block; margin: 5px 0 0; }
+}
+@media (max-width: 720px) {
+  .app { padding: 24px 16px; }
+  .header { align-items: start; }
+  h1 { font-size: 26px; }
+  .mode-label { width: 115px; flex-shrink: 0; }
+  .workspace { grid-template-columns: minmax(0, 1fr); }
+  .stats > div { padding: 14px; }
+  .stats strong { font-size: 23px; }
+  .stats > div:last-child strong { font-size: 18px; }
+  .stats { gap: 8px; }
+  .list-panel { padding: 16px; }
+  .page-actions { gap: 8px; }
+}
+
