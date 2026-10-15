@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>阶段一 · 图书清单</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./main.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <p class="eyebrow">JAVASCRIPT / 阶段一</p>
+      <h1>我的图书清单</h1>
+      <p class="intro">显示列表、新增、删除，让数组里的数据变成可以操作的页面。</p>
+    </header>
+
+    <section class="summary" aria-label="统计">
+      <div><span>图书数量</span><p><strong id="total-count">0</strong> 本</p></div>
+      <div><span>价格合计</span><p><strong id="total-price">0.00</strong> 元</p></div>
+    </section>
+
+    <section class="panel">
+      <h2>新增图书</h2>
+      <form id="book-form" novalidate>
+        <label for="title">书名
+          <input id="title" name="title" type="text" placeholder="输入书名">
+        </label>
+        <label for="author">作者
+          <input id="author" name="author" type="text" placeholder="输入作者">
+        </label>
+        <label for="price">价格（元）
+          <input id="price" name="price" type="text" inputmode="decimal" placeholder="例如 12.30">
+        </label>
+        <button type="submit">新增图书</button>
+      </form>
+      <p id="message" class="message" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section class="panel">
+      <h2>图书列表</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>编号</th><th>书名</th><th>作者</th><th>价格（元）</th><th>操作</th></tr></thead>
+          <tbody id="book-list"></tbody>
+        </table>
+      </div>
+      <p id="empty-state" class="empty-state">还没有图书</p>
+    </section>
+    <p class="footer-note">阶段目标：数组和对象、函数、DOM、事件，以及输入校验。</p>
+  </main>
+</body>
+</html>
+
