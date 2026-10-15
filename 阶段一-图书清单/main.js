@@ -22,17 +22,18 @@ const books = [
     }
 ];
 const tbody = document.querySelector("#book-list");
-const tr = document.createElement("tr");
-const idtd = document.createElement("td"); 
-const titletd = document.createElement("td");
-const authortd = document.createElement("td");
-const priceCentstd = document.createElement("td");
+
 
 //
 function renderBooks(){
+    tbody.textContent = "";
     for (const book of books) {
-    
-    
+    const tr = document.createElement("tr");
+    const idtd = document.createElement("td"); 
+    const titletd = document.createElement("td");
+    const authortd = document.createElement("td");
+    const priceCentstd = document.createElement("td");
+
     //获取对象填入td
     idtd.textContent = book.id;
     titletd.textContent = book.title;
@@ -44,6 +45,10 @@ function renderBooks(){
     tr.appendChild(titletd);
     tr.appendChild(authortd);
     tr.appendChild(priceCentstd);
+
+    
+    //填入tbody主体
+    tbody.appendChild(tr);
     
     //删除按钮
     const actiontd = document.createElement("td");
@@ -54,15 +59,23 @@ function renderBooks(){
     tr.appendChild(actiontd);
     deleteButton.addEventListener("click",function(){
         console.log("准备删除的图书编号: ",book.id);
-        confirm()
+        if (!confirm("确定删除这本书吗?")) {
+            return;
+        }
+        const index = books.findIndex(function (item){
+            return item.id === book.id;
+        });
+        if (index !== -1) {
+            books.splice(index,1);
+            renderBooks();
+            
+        }
     });
-
-    //填入tbody主体
-    tbody.appendChild(tr);
-}
 }
 const emptyState = document.querySelector("#empty-state");
 emptyState.hidden = books.length > 0;
+}
+renderBooks();
 
 
 
